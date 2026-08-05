@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarkVPN — Быстрый и безопасный VPN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,#4a00a8 0%,#18002d 40%,#090011 100%);
+color:white;
+overflow-x:hidden;
+
+}
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+backdrop-filter:blur(20px);
+
+background:rgba(10,10,25,.35);
+
+z-index:1000;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:800;
+
+background:linear-gradient(90deg,#b95cff,#ffffff);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+nav{
+
+display:flex;
+gap:35px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#bb6dff;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 8%;
+
+}
+
+.left{
+
+max-width:650px;
+
+}
+
+.left h1{
+
+font-size:72px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.left h1 span{
+
+color:#bb6dff;
+
+}
+
+.left p{
+
+font-size:22px;
+
+color:#d6d6d6;
+
+margin-bottom:45px;
+
+line-height:1.6;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 36px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.buy{
+
+background:#8d3dff;
+
+color:white;
+
+box-shadow:0 0 35px rgba(157,87,255,.45);
+
+}
+
+.buy:hover{
+
+transform:translateY(-4px);
+
+}
+
+.test{
+
+border:2px solid #8d3dff;
+
+color:white;
+
+}
+
+.test:hover{
+
+background:#8d3dff;
+
+}
+
+.right{
+
+width:520px;
+height:520px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,#9d57ff 0%,#5d19c5 45%,transparent 70%);
+
+filter:blur(15px);
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-25px);}
+100%{transform:translateY(0);}
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:46px;
+
+margin-bottom:70px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+padding:35px;
+
+border-radius:25px;
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:#9d57ff;
+
+box-shadow:0 0 40px rgba(157,87,255,.25);
+
+}
+
+.card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+color:#d4d4d4;
+
+line-height:1.7;
+
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarkVPN — Быстрый и безопасный VPN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,#4a00a8 0%,#18002d 40%,#090011 100%);
+color:white;
+overflow-x:hidden;
+
+}
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+backdrop-filter:blur(20px);
+
+background:rgba(10,10,25,.35);
+
+z-index:1000;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:800;
+
+background:linear-gradient(90deg,#b95cff,#ffffff);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+nav{
+
+display:flex;
+gap:35px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#bb6dff;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 8%;
+
+}
+
+.left{
+
+max-width:650px;
+
+}
+
+.left h1{
+
+font-size:72px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.left h1 span{
+
+color:#bb6dff;
+
+}
+
+.left p{
+
+font-size:22px;
+
+color:#d6d6d6;
+
+margin-bottom:45px;
+
+line-height:1.6;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 36px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.buy{
+
+background:#8d3dff;
+
+color:white;
+
+box-shadow:0 0 35px rgba(157,87,255,.45);
+
+}
+
+.buy:hover{
+
+transform:translateY(-4px);
+
+}
+
+.test{
+
+border:2px solid #8d3dff;
+
+color:white;
+
+}
+
+.test:hover{
+
+background:#8d3dff;
+
+}
+
+.right{
+
+width:520px;
+height:520px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,#9d57ff 0%,#5d19c5 45%,transparent 70%);
+
+filter:blur(15px);
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-25px);}
+100%{transform:translateY(0);}
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:46px;
+
+margin-bottom:70px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+padding:35px;
+
+border-radius:25px;
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:#9d57ff;
+
+box-shadow:0 0 40px rgba(157,87,255,.25);
+
+}
+
+.card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+color:#d4d4d4;
+
+line-height:1.7;
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🛡️ MarkVPN</div>
+
+<nav>
+
+<a href="#">Главная</a>
+<a href="#features">Возможности</a>
+<a href="#pricing">Тарифы</a>
+<a href="#faq">FAQ</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="left">
+
+<h1>
+
+Безопасный VPN
+
+<br>
+
+<span>без ограничений</span>
+
+</h1>
+
+<p>
+
+Защитите свои данные, обходите блокировки и пользуйтесь
+быстрым интернетом на любых устройствах.
+
+</p>
+
+<div class="buttons">
+
+<a class="btn buy" href="#pricing">
+
+🚀 Купить VPN
+
+</a>
+
+<a class="btn test" href="https://t.me/mark_net_vpn_BOT" target="_blank">
+
+🎁 Бесплатный тест
+
+</a>
+
+</div>
+
+</div>
+
+<div class="right"></div>
+
+</section>
+
+<section id="features">
+
+<h2 class="title">
+
+Почему выбирают MarkVPN
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>⚡ Высокая скорость</h3>
+
+<p>
+
+Максимальная скорость подключения без ограничений.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🔒 Защита</h3>
+
+<p>
+
+Современное шифрование защищает ваши данные.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 Серверы</h3>
+
+<p>
+
+Подключайтесь к серверам в разных странах.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📱 Все устройства</h3>
+
+<p>
+
+Windows, macOS, Android, iPhone и другие платформы.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="pricing">
+
+<h2 class="title">
+
+💎 Наши тарифы
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>30 дней</h3>
+
+<div style="font-size:48px;font-weight:800;color:#bb6dff;margin:20px 0;">
+200 ₽
+</div>
+
+<p>Полный доступ ко всем серверам.</p>
+
+<br>
+
+<a class="btn buy" href="#" onclick="openModal()">
+Купить
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>3 месяца</h3>
+
+<div style="font-size:48px;font-weight:800;color:#bb6dff;margin:20px 0;">
+400 ₽
+</div>
+
+<p>Всего 135 ₽ в месяц.</p>
+
+<br>
+
+<a class="btn buy" href="#" onclick="openModal()">
+Купить
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🔥 6 месяцев
+
+</h3>
+
+<div style="font-size:48px;font-weight:800;color:#bb6dff;margin:20px 0;">
+700 ₽
+</div>
+
+<p>
+
+Самый популярный тариф.
+
+</p>
+
+<br>
+
+<a class="btn buy" href="#" onclick="openModal()">
+Купить
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⭐ 12 месяцев
+
+</h3>
+
+<div style="font-size:48px;font-weight:800;color:#bb6dff;margin:20px 0;">
+1300 ₽
+</div>
+
+<p>
+
+Максимальная выгода.
+
+</p>
+
+<br>
+
+<a class="btn buy" href="#" onclick="openModal()">
+Купить
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+
+🎁 Бесплатный тест
+
+</h2>
+
+<div class="card" style="text-align:center;max-width:900px;margin:auto;">
+
+<h3 style="font-size:38px;">
+
+Попробуйте MarkVPN бесплатно
+
+</h3>
+
+<p style="margin:25px 0;font-size:20px;">
+
+Получите тестовый доступ и убедитесь в скорости и качестве VPN.
+
+</p>
+
+<a class="btn buy" href="https://t.me/mark_net_vpn_BOT" target="_blank">
+
+Получить тест
+
+</a>
+
+</div>
+
+</section>
+<section>
+
+<h2 class="title">
+
+👥 Пригласи друга
+
+</h2>
+
+<div class="card" style="text-align:center;max-width:900px;margin:auto;">
+
+<h3 style="font-size:36px;">
+
+Получите 6 дней VPN бесплатно
+
+</h3>
+
+<p style="margin:25px 0;font-size:20px;">
+
+Пригласите друга в MarkVPN и получите бонус —
+6 дней бесплатного доступа.
+
+</p>
+
+<a class="btn buy" href="https://t.me/mark_net_vpn_BOT" target="_blank">
+
+Пригласить друга
+
+</a>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="title">
+
+⭐ Отзывы клиентов
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>★★★★★</h3>
+
+<p>
+
+Очень быстрый VPN. Работает без перебоев.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>★★★★★</h3>
+
+<p>
+
+Подключение занимает всего несколько секунд.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>★★★★★</h3>
+
+<p>
+
+Пользуюсь каждый день. Всё отлично.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="faq">
+
+<h2 class="title">
+
+❓ Частые вопросы
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+Сколько устройств можно подключить?
+
+</h3>
+
+<p>
+
+Неограниченное количество ваших устройств.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Есть ли бесплатный тест?
+
+</h3>
+
+<p>
+
+Да, получить его можно через Telegram-бота.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Как оплатить?
+
+</h3>
+
+<p>
+
+Сейчас через Telegram-бота. Позже появится оплата на сайте.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer style="padding:80px 8%;text-align:center;border-top:1px solid rgba(255,255,255,.08);">
+
+<h2 style="font-size:34px;margin-bottom:15px;">
+
+🛡️ MarkVPN
+
+</h2>
+
+<p style="color:#bbb;margin-bottom:30px;">
+
+Быстрый • Безопасный • Без ограничений
+
+</p>
+
+<a class="btn buy" href="https://t.me/mark_net_vpn_BOT" target="_blank">
+
+Открыть Telegram-бота
+
+</a>
+
+<p style="margin-top:40px;color:#777;">
+
+© 2026 MarkVPN. Все права защищены.
+
+</p>
+
+</footer>
+
+
+
+<div id="buyModal" style="display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.8);justify-content:center;align-items:center;z-index:9999;">
+
+<div style="background:#18132d;padding:40px;border-radius:25px;text-align:center;max-width:420px;width:90%;">
+
+<h2 style="margin-bottom:25px;">
+
+Выберите способ покупки
+
+</h2>
+
+<a class="btn buy" href="https://t.me/mark_net_vpn_BOT" target="_blank">
+
+🤖 Купить через Telegram
+
+</a>
+
+<br><br>
+
+<a class="btn test" href="#">
+
+💳 Оплата на сайте (скоро)
+
+</a>
+
+<br><br>
+
+<a class="btn test" href="#" onclick="closeModal();return false;">
+
+Закрыть
+
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openModal(){
+
+document.getElementById("buyModal").style.display="flex";
+
+}
+
+function closeModal(){
+
+document.getElementById("buyModal").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+const modal=document.getElementById("buyModal");
+
+if(event.target===modal){
+
+closeModal();
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+<section id="about">
+
+<h2 class="title">
+👋 О создателе
+</h2>
+
+<div class="cards" style="align-items:center;">
+
+<div class="card" style="text-align:center;">
+
+<img src="./me.jpg"
+     alt="Марк"
+     style="
+       width:220px;
+       height:220px;
+       object-fit:cover;
+       border-radius:25px;
+       border:3px solid #9d57ff;
+       box-shadow:0 0 35px rgba(157,87,255,.45);
+       margin-bottom:20px;
+">
+
+<h2>Марк</h2>
+
+<p style="margin-top:10px;">
+🛡️ Основатель и разработчик MarkVPN
+</p>
+
+</div>
+
+<div class="card">
+
+<h2 style="margin-bottom:25px;">
+👋 Привет!
+</h2>
+
+<p style="line-height:1.9;font-size:18px;">
+
+Меня зовут <b>Марк</b>, я — создатель <b>MarkVPN</b>.
+
+Я развиваю этот проект каждый день, чтобы сделать VPN быстрым, удобным и стабильным.
+
+MarkVPN — это не просто VPN, а сервис, который постоянно становится лучше благодаря новым функциям и обратной связи пользователей.
+
+Спасибо каждому, кто выбирает MarkVPN и помогает проекту расти. 💜
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+🚀 Цели проекта
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚡ Скорость</h3>
+<p>Максимально быстрые серверы без ограничений.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Безопасность</h3>
+<p>Надёжная защита ваших данных и конфиденциальности.</p>
+</div>
+
+<div class="card">
+<h3>❤️ Постоянное развитие</h3>
+<p>MarkVPN регулярно получает новые функции и улучшения.</p>
+</div>
+
+<div class="card">
+<h3>🤝 Поддержка</h3>
+<p>Если возникнут вопросы — всегда можно обратиться за помощью.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card" style="max-width:1000px;margin:auto;text-align:center;">
+
+<h2 style="font-size:42px;">💜</h2>
+
+<p style="font-size:24px;line-height:1.8;margin-top:20px;">
+
+«Я создаю MarkVPN таким сервисом,
+которым сам хотел бы пользоваться каждый день.»
+
+</p>
+
+<br>
+
+<h3>— Марк</h3>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="title">
+🚀 Цели проекта
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>⚡ Скорость</h3>
+
+<p>
+
+Максимально быстрые серверы без ограничений.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🔒 Безопасность</h3>
+
+<p>
+
+Надёжная защита ваших данных и конфиденциальности.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>❤️ Постоянное развитие</h3>
+
+<p>
+
+MarkVPN регулярно получает новые функции и улучшения.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🤝 Поддержка</h3>
+
+<p>
+
+Если возникнут вопросы — всегда можно обратиться за помощью.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card"
+style="
+max-width:1000px;
+margin:auto;
+text-align:center;
+">
+
+<h2 style="font-size:42px;">
+
+💜
+
+</h2>
+
+<p style="
+font-size:24px;
+line-height:1.8;
+margin-top:20px;
+">
+
+«Я создаю MarkVPN таким сервисом,
+которым сам хотел бы пользоваться каждый день.»
+
+</p>
+
+<br>
+
+<h3>
+— Марк
+</h3>
+
+</div>
+
+</section>
